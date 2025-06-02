@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wordy – Your Word Counter Buddy!</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #fffbea;
+      color: #333;
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    .head {
+      background: linear-gradient(to right, #f6d365, #fda085);
+      text-align: center;
+      padding: 20px;
+      color: #442200;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .wordy-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 8px;
+    }
+
+    .bee-icon {
+      width: 50px;
+      height: auto;
+      vertical-align: middle;
+    }
+
+
+    .wordbox {
+      width: 80%;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    .textarea {
+      background: #fff3b0;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-size: 16px;
+      padding: 10px;
+      border: 2px solid #f7c948;
+      border-radius: 10px;
+      resize: none;
+      background-color: #fff9dc;
+      color: #333;
+    }
+
+    .btn {
+      background-color: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #ffd633;
+    }
+
+    .txt {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      font-size: 16px;
+      border: 2px solid #f7c948;
+      border-radius: 8px;
+      background-color: #fffbe6;
+    }
+
+    .foot {
+      background-color: #ffe066;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      color: #553300;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"> 
+
+    <div class="head">
+      Welcome to
+      <span class="wordy-logo">
+        <span style="color:#e43f42; font-weight: bold;">Wordy</span>
+        <img src="wordybee.png" alt="WB" class="bee-icon">
+      </span>
+      – Your Word Counter Buddy!
+    </div>
+
+    <div class="wordbox main">
+      <form name="wordcount">
+        <div class="textarea">
+          <textarea name="wordcount1" id="count" placeholder="Paste Your Text Here"></textarea><br>
+          <input class="btn" type="button" value="CALCULATE WORDS" onClick="countword()"><br>
+          <input class="txt" type="text" name="wordcount2" placeholder="Word count here" readonly>
+        </div>
+      </form>
+    </div>
+
+    <div class="foot">THANK YOU</div>
+
+  </div> 
+
+  <script>
+    function countword() {
+      const text = document.wordcount.wordcount1.value.trim();
+      const words = text.length > 0 ? text.split(/\s+/).length : 0;
+      document.wordcount.wordcount2.value = words;
+    }
+  </script>
+</body>
+
+
+  <script>
+    function countword() {
+      const text = document.wordcount.wordcount1.value.trim();
+      const words = text.length > 0 ? text.split(/\s+/).length : 0;
+      document.wordcount.wordcount2.value = words;
+    }
+  </script>
+</body>
+
+</html>
